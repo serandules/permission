@@ -1,0 +1,16 @@
+{
+    "name": "permission",
+    "description": "permission",
+    "version": "0.0.0",
+    "author": {
+        "name": "serandives",
+        "email": "serandives@gmail.com"
+    },
+    "dependencies": {
+        "logger": "serandules/logger#master"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/serandules/permission.git"
+    }
+}

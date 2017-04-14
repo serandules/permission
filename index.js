@@ -54,6 +54,13 @@ var add = function (tree, perms, actions) {
     tree[''] = allowed.concat(actions);
 };
 
+/**
+ * at least one permission tree has permitted
+ * @param trees
+ * @param perm
+ * @param action
+ * @returns {boolean}
+ */
 var least = function (trees, perm, action) {
     perm = perm.split(':');
     trees = trees instanceof Array ? trees : [trees];
@@ -68,6 +75,15 @@ var least = function (trees, perm, action) {
     return false;
 };
 
+module.exports.least = least;
+
+/**
+ * should all permission trees have permitted
+ * @param trees
+ * @param perm
+ * @param action
+ * @returns {boolean}
+ */
 var every = function (trees, perm, action) {
     perm = perm.split(':');
     trees = trees instanceof Array ? trees : [trees];
@@ -82,21 +98,29 @@ var every = function (trees, perm, action) {
     return true;
 };
 
+module.exports.every = every;
+
+/**
+ * add an entry into the permission tree
+ * @param tree
+ * @param perm
+ * @param actions
+ */
 var permit = function (tree, perm, actions) {
     actions = actions instanceof Array ? actions : [actions];
     return add(tree, perm.split(':'), actions);
 };
 
+module.exports.permit = permit;
+
+/**
+ * merge given permission trees
+ * @returns {*}
+ */
 var merge = function () {
     var args = Array.prototype.slice.call(arguments);
     return args[0];
 };
-
-module.exports.least = least;
-
-module.exports.every = every;
-
-module.exports.permit = permit;
 
 module.exports.merge = merge;
 

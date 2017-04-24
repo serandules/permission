@@ -6,6 +6,9 @@
         "name": "serandives",
         "email": "serandives@gmail.com"
     },
+    "scripts": {
+        "test": "mocha"
+    },
     "dependencies": {
         "logger": "serandules/logger#master"
     },

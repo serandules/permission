@@ -76,7 +76,7 @@ describe('permission:index should verify', function () {
         done();
     });
 
-    it('permission true building', function (done) {
+    it('permission tree building', function (done) {
         var tree = {}
         perm.least(tree, 'users:123456', 'read').should.equal(false);
         perm.least(tree, 'users:123456:comments', 'read').should.equal(false);

@@ -42,6 +42,14 @@ var resource = {
     }
 };
 
+var allowed = {
+    groups: {
+        '*': {
+
+        }
+    }
+}
+
 /*
  resource.user ==> resource owner
  resource.has ==> contains who can access the resource
